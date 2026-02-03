@@ -128,69 +128,73 @@ section {
     object-fit: cover;
 }
 
-/* ================= NOVEDADES / TAGEMBED ================= */
-#novedades {
-    background-color: #fff;
+/* ================= NOVEDADES / OPINIONES ================= */
+#novedades { background-color: #fff; }
+#opiniones { background-color: #f9f9f9; }
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
-#novedades p {
-    margin-bottom: 40px;
-    color: #555;
-}
-
+/* ================= TAGEMBED – SOLUCIÓN DEFINITIVA ================= */
 .reviews-widget {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 }
 
 .reviews-widget iframe {
     width: 100%;
     border: none;
     display: block;
-    overflow: hidden;
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
+    .reviews-widget {
+        height: 520px;
+    }
+
     .reviews-widget iframe {
-        height: 480px;
+        height: 520px;
     }
 }
 
 /* Tablet */
 @media (max-width: 1023px) {
+    .reviews-widget {
+        height: 650px;
+    }
+
     .reviews-widget iframe {
-        height: 600px;
+        height: 650px;
     }
 }
 
-/* Mobile – SOLUCIÓN DEFINITIVA */
+/* Mobile */
 @media (max-width: 768px) {
     .reviews-widget {
-        padding: 10px;
+        height: 900px;
+        padding: 0;
     }
 
     .reviews-widget iframe {
-        height: 85vh;
-        min-height: 950px;
+        height: 100%;
     }
-}
-
-/* ================= OPINIONES ================= */
-#opiniones {
-    background-color: #f9f9f9;
 }
 
 /* ================= CONTACTO ================= */
 #contactenos {
     background-color: #fff;
     min-height: 400px;
-}
-
-#contactenos h2 {
-    margin-bottom: 30px;
 }
 
 .contact-social {
