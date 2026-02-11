@@ -99,13 +99,16 @@
 
         /* Quienes Somos */
         #quienes-somos {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            background-color: #f9f9f9;
-        }
+    background-color: #f9f9f9;
+}
+
+.quienes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
 
         #quienes-somos .texto {
             flex: 1 1 400px;
@@ -314,10 +317,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            #quienes-somos {
-                flex-direction: column;
-                gap: 2px;
-            }
+          #quienes-somos {
 
             #contactenos .contact-info {
                 flex-direction: column;
