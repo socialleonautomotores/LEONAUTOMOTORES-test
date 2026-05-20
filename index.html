@@ -12,7 +12,9 @@
 rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+crossorigin="anonymous"
+referrerpolicy="no-referrer"/>
 
 <style>
 
@@ -22,31 +24,26 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-
-/* EVITA SALTOS AUTOMÁTICOS */
-overflow-anchor:none;
-}
-
 body{
-font-family:'Alibaba Sans',sans-serif;
+font-family:'Alibaba Sans',Arial,sans-serif;
 color:#1c1c1c;
-overflow-anchor:none;
 }
 
-
-/* HERO */
+body,html{
+height:100%;
+scroll-behavior:smooth;
+}
 
 .hero{
-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#1c1c1c,#333);
 text-align:center;
-padding:20px;
+height:100vh;
+background:linear-gradient(135deg,#1c1c1c,#333333);
+color:white;
+padding:0 20px;
 }
 
 .hero img{
@@ -55,44 +52,31 @@ width:100%;
 margin-bottom:40px;
 }
 
-.buttons{
+.hero .buttons{
 display:flex;
 gap:20px;
 flex-wrap:wrap;
 justify-content:center;
 }
 
-.buttons a{
+.hero .buttons a{
+text-decoration:none;
 padding:12px 25px;
 border:2px solid #D4AF37;
 color:#D4AF37;
-text-decoration:none;
-border-radius:8px;
 font-weight:700;
-transition:.3s;
+border-radius:8px;
 }
-
-.buttons a:hover{
-background:#D4AF37;
-color:#111;
-}
-
 
 #flota,
-.buttons a[href="#flota"]{
+.hero .buttons a[href="#flota"]{
 display:none!important;
 }
 
-
-/* SECCIONES */
-
 section{
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
 }
-
-
-/* QUIENES SOMOS */
 
 #quienes-somos{
 background:#f9f9f9;
@@ -101,75 +85,35 @@ background:#f9f9f9;
 .quienes-wrapper{
 display:flex;
 flex-wrap:wrap;
-gap:30px;
-justify-content:center;
 align-items:center;
+justify-content:center;
+gap:30px;
 }
 
-.texto{
-max-width:650px;
+#quienes-somos .texto{
+flex:1 1 400px;
+max-width:600px;
 text-align:justify;
 }
 
-.foto-gerente{
-width:70px;
-height:70px;
+#quienes-somos .foto-gerente{
+flex:0 0 70px;
 border-radius:50%;
 border:3px solid #D4AF37;
-object-fit:cover;
 }
-
-
-
-/* NOVEDADES */
 
 #novedades{
-background:white;
-padding-top:40px;
-padding-bottom:40px;
+background:#fff;
 }
-
-
-
-/* OPINIONES */
 
 #opiniones{
 background:#f9f9f9;
-padding-top:40px;
-padding-bottom:40px;
 }
 
-
-
-.section-title{
-font-size:2rem;
-margin-bottom:20px;
+#contactenos{
+background:#fff;
+min-height:400px;
 }
-
-
-.section-inner{
-max-width:1200px;
-margin:auto;
-}
-
-
-/* WIDGETS */
-
-.reviews-widget{
-padding:0;
-margin:0;
-overflow:hidden;
-}
-
-/* QUITA ESPACIO EXTRA GOOGLE */
-
-#opiniones .reviews-widget{
-padding-bottom:0;
-}
-
-
-
-/* CONTACTO */
 
 .contact-social{
 display:flex;
@@ -181,16 +125,15 @@ margin-bottom:40px;
 .contact-social a{
 width:55px;
 height:55px;
+border:2px solid #D4AF37;
 border-radius:50%;
 display:flex;
-justify-content:center;
 align-items:center;
-border:2px solid #D4AF37;
-color:#D4AF37;
+justify-content:center;
+font-size:1.6rem;
 text-decoration:none;
-font-size:1.5rem;
+color:#D4AF37;
 }
-
 
 .contact-info{
 display:flex;
@@ -198,22 +141,19 @@ flex-wrap:wrap;
 gap:40px;
 }
 
-.mapa,
-.formulario{
-flex:1;
-min-width:300px;
+.formulario,
+.mapa{
+flex:1 1 500px;
 }
 
 .mapa iframe{
 width:100%;
-height:450px;
-border:0;
+min-height:450px;
 }
 
-
 input,
-textarea,
-select{
+select,
+textarea{
 width:100%;
 padding:10px;
 margin-bottom:15px;
@@ -224,35 +164,25 @@ border-radius:8px;
 button{
 padding:12px 25px;
 border:2px solid #D4AF37;
-background:none;
+background:transparent;
 color:#D4AF37;
 border-radius:8px;
-font-weight:700;
 cursor:pointer;
 }
-
-
-
-/* FOOTER */
 
 footer{
 background:#1c1c1c;
 color:white;
 padding:20px;
 text-align:center;
-line-height:1.6;
 }
 
 footer a{
 color:white;
 }
 
-
-/* BOTONES */
-
 .whatsapp-float,
 .backtotop-float{
-
 position:fixed;
 bottom:20px;
 width:60px;
@@ -263,25 +193,42 @@ justify-content:center;
 align-items:center;
 color:white;
 text-decoration:none;
-font-size:30px;
 }
 
 .whatsapp-float{
-right:20px;
 background:#25d366;
+right:20px;
 }
 
 .backtotop-float{
-right:90px;
 background:#333;
+right:90px;
 }
 
+.reviews-widget{
+background:transparent;
+padding:0;
+}
+
+.section-title{
+font-size:2rem;
+margin-bottom:25px;
+}
+
+.section-inner{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+#opiniones .reviews-widget{
+padding-bottom:100px;
+}
 
 </style>
 </head>
 
 <body id="top">
-
 
 <section class="hero">
 
@@ -289,16 +236,29 @@ background:#333;
 
 <div class="buttons">
 
-<a href="#quienes-somos">QUIENES SOMOS</a>
-<a href="#novedades">NOVEDADES</a>
-<a href="#opiniones">OPINIONES</a>
-<a href="#contactenos">CONTACTANOS</a>
+<a href="#quienes-somos">
+QUIENES SOMOS
+</a>
+
+<a href="#novedades">
+NOVEDADES
+</a>
+
+<a href="#opiniones">
+OPINIONES
+</a>
+
+<a href="#flota">
+NUESTRA FLOTA
+</a>
+
+<a href="#contactenos">
+CONTACTANOS
+</a>
 
 </div>
 
 </section>
-
-
 
 <section id="quienes-somos">
 
@@ -308,19 +268,22 @@ background:#333;
 
 <div class="texto">
 
-<h2 class="section-title">QUIENES SOMOS</h2>
+<h2 class="section-title">
+QUIENES SOMOS
+</h2>
 
 <p>
-En Leon Automotores creemos que comprar un auto debe ser simple.
+En Leon Automotores...
 </p>
 
 <p>
-Leonardo Mañez · Gerente
+Leonardo Mañez
 </p>
 
 </div>
 
-<img src="gerente.jpg" class="foto-gerente">
+<img src="gerente.jpg"
+class="foto-gerente">
 
 </div>
 
@@ -329,22 +292,30 @@ Leonardo Mañez · Gerente
 </section>
 
 
-
-
 <section id="novedades">
 
 <div class="section-inner">
 
-<h2 class="section-title">NOVEDADES</h2>
+<h2 class="section-title">
+NOVEDADES
+</h2>
 
-<p>Mirá nuestras últimas publicaciones</p>
+<p>
+Mirá nuestras últimas publicaciones en Instagram.
+</p>
 
 <div class="reviews-widget">
 
 <iframe
 src="https://embed.gizmosauce.com/embed/019e21b7/35cc7256/b477adf6/b515b496.html"
 loading="lazy"
-style="width:100%;height:600px;border:0;border-radius:12px;">
+title="Instagram Feed"
+style="
+width:100%;
+height:600px;
+border:0;
+overflow:hidden;
+border-radius:12px;">
 </iframe>
 
 </div>
@@ -352,8 +323,6 @@ style="width:100%;height:600px;border:0;border-radius:12px;">
 </div>
 
 </section>
-
-
 
 
 <section id="opiniones">
@@ -365,7 +334,7 @@ NUESTROS CLIENTES
 </h2>
 
 <p>
-Lo que dicen quienes confiaron en León Automotores
+Lo que dicen quienes ya confiaron.
 </p>
 
 <div class="reviews-widget">
@@ -382,10 +351,7 @@ data-gizmo-lazy>
 
 </section>
 
-
 <script src="https://embed.gizmosauce.com/gs.js" defer></script>
-
-
 
 
 <section id="contactenos">
@@ -396,39 +362,59 @@ data-gizmo-lazy>
 CONTACTANOS
 </h2>
 
+<div class="contact-social">
+
+<a href="https://www.facebook.com/profile.php?id=61576873064599">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/leon.automotoresrio4/">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/5493584828385">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
 </div>
 
 </section>
 
 
-
 <footer>
 
-Copyright © 2026 LEÓNMA AUTOMOTORES SAS
+Copyright © 2026 LEÓNMA AUTOMOTORES
 
 </footer>
 
 
-
-<a href="https://wa.me/5493584828385"
+<a
+href="https://wa.me/5493584828385"
 class="whatsapp-float">
+
 <i class="fab fa-whatsapp"></i>
+
 </a>
 
 
-<a href="#top"
+<a
+href="#top"
 class="backtotop-float">
-⬆
-</a>
 
+⬆
+
+</a>
 
 <script>
+
 window.addEventListener('load',()=>{
 
-history.scrollRestoration='manual';
 window.scrollTo(0,0);
 
 });
+
 </script>
 
 </body>
