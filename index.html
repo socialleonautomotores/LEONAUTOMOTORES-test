@@ -12,7 +12,7 @@
 rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
 
@@ -22,27 +22,31 @@ padding:0;
 box-sizing:border-box;
 }
 
-html,
-body{
-height:100%;
-font-family:'Alibaba Sans',Arial,sans-serif;
-color:#1c1c1c;
+html{
 scroll-behavior:smooth;
-overflow-anchor:none; /* evita saltos automáticos */
+
+/* EVITA SALTOS AUTOMÁTICOS */
+overflow-anchor:none;
 }
+
+body{
+font-family:'Alibaba Sans',sans-serif;
+color:#1c1c1c;
+overflow-anchor:none;
+}
+
 
 /* HERO */
 
 .hero{
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-height:100vh;
-text-align:center;
 background:linear-gradient(135deg,#1c1c1c,#333);
-padding:0 20px;
-color:white;
+text-align:center;
+padding:20px;
 }
 
 .hero img{
@@ -51,32 +55,34 @@ width:100%;
 margin-bottom:40px;
 }
 
-.hero .buttons{
+.buttons{
 display:flex;
 gap:20px;
 flex-wrap:wrap;
 justify-content:center;
 }
 
-.hero .buttons a{
-text-decoration:none;
+.buttons a{
 padding:12px 25px;
 border:2px solid #D4AF37;
+color:#D4AF37;
+text-decoration:none;
 border-radius:8px;
 font-weight:700;
-color:#D4AF37;
 transition:.3s;
 }
 
-.hero .buttons a:hover{
+.buttons a:hover{
 background:#D4AF37;
-color:#1c1c1c;
+color:#111;
 }
 
+
 #flota,
-.hero .buttons a[href="#flota"]{
+.buttons a[href="#flota"]{
 display:none!important;
 }
+
 
 /* SECCIONES */
 
@@ -85,16 +91,6 @@ padding:60px 20px;
 text-align:center;
 }
 
-.section-inner{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
-
-.section-title{
-font-size:2rem;
-margin-bottom:25px;
-}
 
 /* QUIENES SOMOS */
 
@@ -104,25 +100,15 @@ background:#f9f9f9;
 
 .quienes-wrapper{
 display:flex;
-gap:30px;
 flex-wrap:wrap;
-align-items:center;
+gap:30px;
 justify-content:center;
+align-items:center;
 }
 
 .texto{
-max-width:600px;
+max-width:650px;
 text-align:justify;
-}
-
-.texto p{
-font-style:italic;
-line-height:1.6;
-}
-
-.firma{
-margin-top:15px;
-color:#555;
 }
 
 .foto-gerente{
@@ -133,40 +119,55 @@ border:3px solid #D4AF37;
 object-fit:cover;
 }
 
+
+
 /* NOVEDADES */
 
 #novedades{
 background:white;
-padding-bottom:20px;
+padding-top:40px;
+padding-bottom:40px;
 }
 
-#novedades p{
-margin-bottom:20px;
-}
 
-#novedades iframe{
-width:100%;
-height:560px;
-border:0;
-border-radius:12px;
-}
 
 /* OPINIONES */
 
 #opiniones{
 background:#f9f9f9;
-padding-bottom:20px;
+padding-top:40px;
+padding-bottom:40px;
 }
 
-#opiniones p{
+
+
+.section-title{
+font-size:2rem;
 margin-bottom:20px;
 }
+
+
+.section-inner{
+max-width:1200px;
+margin:auto;
+}
+
+
+/* WIDGETS */
 
 .reviews-widget{
 padding:0;
 margin:0;
-background:transparent;
+overflow:hidden;
 }
+
+/* QUITA ESPACIO EXTRA GOOGLE */
+
+#opiniones .reviews-widget{
+padding-bottom:0;
+}
+
+
 
 /* CONTACTO */
 
@@ -181,51 +182,56 @@ margin-bottom:40px;
 width:55px;
 height:55px;
 border-radius:50%;
-border:2px solid #D4AF37;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+border:2px solid #D4AF37;
 color:#D4AF37;
 text-decoration:none;
 font-size:1.5rem;
 }
 
+
 .contact-info{
 display:flex;
-gap:40px;
 flex-wrap:wrap;
+gap:40px;
 }
 
-.formulario,
-.mapa{
-flex:1 1 500px;
+.mapa,
+.formulario{
+flex:1;
+min-width:300px;
 }
 
 .mapa iframe{
 width:100%;
-min-height:450px;
+height:450px;
+border:0;
 }
 
+
 input,
-select,
-textarea{
+textarea,
+select{
 width:100%;
 padding:10px;
 margin-bottom:15px;
 border:1px solid #ccc;
 border-radius:8px;
-font-family:'Alibaba Sans';
 }
 
 button{
 padding:12px 25px;
 border:2px solid #D4AF37;
-background:transparent;
+background:none;
 color:#D4AF37;
 border-radius:8px;
-cursor:pointer;
 font-weight:700;
+cursor:pointer;
 }
+
+
 
 /* FOOTER */
 
@@ -233,6 +239,7 @@ footer{
 background:#1c1c1c;
 color:white;
 padding:20px;
+text-align:center;
 line-height:1.6;
 }
 
@@ -240,10 +247,12 @@ footer a{
 color:white;
 }
 
+
 /* BOTONES */
 
 .whatsapp-float,
 .backtotop-float{
+
 position:fixed;
 bottom:20px;
 width:60px;
@@ -252,54 +261,43 @@ border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:30px;
 color:white;
 text-decoration:none;
+font-size:30px;
 }
 
 .whatsapp-float{
-background:#25d366;
 right:20px;
+background:#25d366;
 }
 
 .backtotop-float{
-background:#333;
 right:90px;
+background:#333;
 }
 
-@media(max-width:768px){
-
-.contact-info{
-flex-direction:column;
-}
-
-.hero img{
-max-width:360px;
-}
-
-.hero .buttons{
-gap:10px;
-}
-
-}
 
 </style>
 </head>
 
 <body id="top">
 
+
 <section class="hero">
 
-<img src="leon-logo.png" alt="Leon Automotores">
+<img src="leon-logo.png">
 
 <div class="buttons">
+
 <a href="#quienes-somos">QUIENES SOMOS</a>
 <a href="#novedades">NOVEDADES</a>
 <a href="#opiniones">OPINIONES</a>
 <a href="#contactenos">CONTACTANOS</a>
+
 </div>
 
 </section>
+
 
 
 <section id="quienes-somos">
@@ -313,12 +311,11 @@ gap:10px;
 <h2 class="section-title">QUIENES SOMOS</h2>
 
 <p>
-En Leon Automotores creemos que comprar un auto debe ser simple,
-seguro y transparente...
+En Leon Automotores creemos que comprar un auto debe ser simple.
 </p>
 
-<p class="firma">
-Leonardo Mañez — Gerente
+<p>
+Leonardo Mañez · Gerente
 </p>
 
 </div>
@@ -326,8 +323,11 @@ Leonardo Mañez — Gerente
 <img src="gerente.jpg" class="foto-gerente">
 
 </div>
+
 </div>
+
 </section>
+
 
 
 
@@ -337,20 +337,22 @@ Leonardo Mañez — Gerente
 
 <h2 class="section-title">NOVEDADES</h2>
 
-<p>Mirá nuestras últimas publicaciones en Instagram.</p>
+<p>Mirá nuestras últimas publicaciones</p>
 
 <div class="reviews-widget">
 
 <iframe
 src="https://embed.gizmosauce.com/embed/019e21b7/35cc7256/b477adf6/b515b496.html"
 loading="lazy"
-title="Instagram Feed">
+style="width:100%;height:600px;border:0;border-radius:12px;">
 </iframe>
 
 </div>
 
 </div>
+
 </section>
+
 
 
 
@@ -363,7 +365,7 @@ NUESTROS CLIENTES
 </h2>
 
 <p>
-Lo que dicen quienes ya confiaron en León Automotores.
+Lo que dicen quienes confiaron en León Automotores
 </p>
 
 <div class="reviews-widget">
@@ -377,10 +379,12 @@ data-gizmo-lazy>
 </div>
 
 </div>
+
 </section>
 
 
 <script src="https://embed.gizmosauce.com/gs.js" defer></script>
+
 
 
 
@@ -392,37 +396,6 @@ data-gizmo-lazy>
 CONTACTANOS
 </h2>
 
-<div class="contact-info">
-
-<div class="mapa">
-
-<iframe
-src="https://www.google.com/maps?q=Leon+Automotores+Rio+4&output=embed"
-loading="lazy">
-</iframe>
-
-</div>
-
-<div class="formulario">
-
-<form>
-
-<input placeholder="Nombre">
-<input placeholder="Apellido">
-<input placeholder="Teléfono">
-<input placeholder="Email">
-
-<textarea rows="5"
-placeholder="Comentarios"></textarea>
-
-<button>Enviar</button>
-
-</form>
-
-</div>
-
-</div>
-
 </div>
 
 </section>
@@ -431,7 +404,7 @@ placeholder="Comentarios"></textarea>
 
 <footer>
 
-Buenos Aires 1166 · Río Cuarto · Córdoba
+Copyright © 2026 LEÓNMA AUTOMOTORES SAS
 
 </footer>
 
@@ -439,41 +412,23 @@ Buenos Aires 1166 · Río Cuarto · Córdoba
 
 <a href="https://wa.me/5493584828385"
 class="whatsapp-float">
-
 <i class="fab fa-whatsapp"></i>
-
 </a>
 
 
 <a href="#top"
 class="backtotop-float">
-
 ⬆
-
 </a>
 
 
-
 <script>
+window.addEventListener('load',()=>{
 
-/* evita salto automático al cargar widgets */
-
-history.scrollRestoration="manual";
-
-window.addEventListener("load",()=>{
-
+history.scrollRestoration='manual';
 window.scrollTo(0,0);
-
-setTimeout(()=>{
-window.scrollTo(0,0);
-},1000);
-
-setTimeout(()=>{
-window.scrollTo(0,0);
-},2500);
 
 });
-
 </script>
 
 </body>
